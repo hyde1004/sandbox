@@ -1,0 +1,13 @@
+--- a/hello3.c	2015-03-12 08:56:31.074153034 +0900
++++ b/hello3.c	2015-03-12 08:57:00.482152992 +0900
+@@ -1,9 +1,9 @@
++#include <stdio.h>
+ int main(void)
+ {
+ 	int a = 1;
+ 	int b = 2;
+ 	int c = a + b;
+-	int d = 0;
+ 
+ 	printf("c = %d\n", c);
+ 

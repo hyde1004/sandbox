@@ -1,0 +1,31 @@
+diff -urN c/add.c d/add.c
+--- c/add.c	2015-03-12 09:24:43.802150393 +0900
++++ d/add.c	2015-03-12 09:24:48.558150349 +0900
+@@ -1,5 +1,6 @@
++#include "add.h"
++
+ int add(int a, int b)
+ {
+-	printf("a+b=%d\n", a+b);
+ 	return a+b;
+ }
+diff -urN c/add.h d/add.h
+--- c/add.h	1970-01-01 09:00:00.000000000 +0900
++++ d/add.h	2015-03-12 09:24:48.558150349 +0900
+@@ -0,0 +1 @@
++int add(int a, int b);
+diff -urN c/lib.c d/lib.c
+--- c/lib.c	2015-03-12 09:24:43.802150393 +0900
++++ d/lib.c	1970-01-01 09:00:00.000000000 +0900
+@@ -1,11 +0,0 @@
+-#include <stdio.h>
+-
+-int main(void)
+-{
+-	int a = 10;
+-	int b = 20;
+-	int c = add(a, b);
+-
+-	printf("c:%d\n", c);
+-	return 0;
+-}

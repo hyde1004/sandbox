@@ -1,0 +1,4 @@
+0a1
+> #include <stdio.h>
+6d6
+< 	int d = 0;
