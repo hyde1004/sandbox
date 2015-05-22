@@ -5,24 +5,19 @@ import datetime
 start = datetime.datetime(2014, 5, 25)
 end = datetime.datetime(2015, 5, 24)
 
-skt = web.DataReader('017670.KS', 'yahoo', start, end)
-kt_g = web.DataReader('033780.KS', 'yahoo', start, end)
-korea_shell = web.DataReader('002960.KS', 'yahoo', start, end)
+stocks = ['017670.KS', '033780.KS', '002960.KS']
+stocks_name = ['SK텔레콤', 'KT&G', '한국쉘석유']
+stocks_data = []
+
+for stock in stocks:
+	stocks_data.append(web.DataReader(stock, 'yahoo', start, end))
 
 plt.figure(1)
-plt.subplot(3,1,1)
-plt.plot(skt.index, skt['Close'], 'r')
-plt.grid(True)
-plt.title('SK텔레콤')
 
-plt.subplot(3,1,2)
-plt.plot(kt_g.index, kt_g['Close'], 'g')
-plt.grid(True)
-plt.title('KT&G')
-
-plt.subplot(3,1,3)
-plt.plot(korea_shell.index, korea_shell['Close'], 'b')
-plt.grid(True)
-plt.title('한국쉘석유')
+for i in range(len(stocks)):
+	plt.subplot(len(stocks),1,i+1)
+	plt.plot(stocks_data[i].index, stocks_data[i]['Close'])
+	plt.grid(True)
+	plt.title(stocks_name[i])
 
 plt.show()
